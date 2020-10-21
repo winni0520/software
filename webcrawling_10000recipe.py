@@ -57,15 +57,15 @@ ingre = soup.find("div", attrs={"class": "ready_ingre3"})
 with open(file_path+dir_name+"\\recipe_ingre.html", "w", encoding="utf-8") as f:
     f.write(str(ingre))
 recipe_file = open(file_path+dir_name+"\\recipe_ingre.html", 'r', encoding='utf-8')
-file_soup = BeautifulSoup(recipe_file, 'html.parser')
+i_file_soup = BeautifulSoup(recipe_file, 'html.parser')
 check = 0
-ingre_unit = file_soup.find_all("span", attrs={"class" : "ingre_unit"})
+ingre_unit = i_file_soup.find_all("span", attrs={"class" : "ingre_unit"})
 for unit in ingre_unit:
     d = unit.get_text()
     amount.append(d)
     check +=1
 
-ingre_name = file_soup.find_all("li")
+ingre_name = i_file_soup.find_all("li")
 for ing in ingre_name:
     if check == 0:
         break
@@ -116,7 +116,7 @@ file_soup = BeautifulSoup(recipe_file, 'html.parser')
 for i in range(0, step_num):
     images = file_soup.findAll('img')[i]
     step_img = images.get("src")
-    urllib.request.urlretrieve(step_img, file_path+dir_name+"\\img"+str(i))
+    urllib.request.urlretrieve(step_img, file_path+dir_name+"\\img"+str(i)+".png")
     #print(step_img) #테스트용
 
 """레시피 내용 텍스트 파일로 저장"""
