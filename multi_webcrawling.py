@@ -10,10 +10,6 @@ import os
 import shutil #folder remove
 
 driver = webdriver.Chrome('C:\\Users\\damin-jo\\Desktop\\Selenium\\chromedriver_win32\\chromedriver.exe')
-#driver.get('https://www.10000recipe.com/recipe/list.html?q=&query=&cat1=&cat2=&cat3=&cat4=54&fct=&order=reco&lastcate=cat4&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource=')
-#driver.get('https://www.10000recipe.com/recipe/list.html?cat4=54&order=reco&page=1')
-#이건 일단 국/탕 카테고리
-#print("예시- C:\Users\damin-jo\Desktop\Selenium")
 file_path = input("데이터 저장할 경로 입력(절대경로): ")
 total_recipe_num = input("웹 크롤링하고 싶은 레시피 개수 입력: ")
 total_recipe_num = int(total_recipe_num)
